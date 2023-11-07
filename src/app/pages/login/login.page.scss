@@ -14,13 +14,6 @@ ion-card.login-card {
     border-radius: 25px;
     margin: 45px 190px;
   
-    ion-grid {
-      ion-row {
-        ion-col {
-          // Estilos para las columnas
-        }
-      }
-    }
   
     ion-button {
       background-color: #55CBCD;
@@ -37,5 +30,3 @@ ion-card.login-card {
       }
     }
   }
-  
-

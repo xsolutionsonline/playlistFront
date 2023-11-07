@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ToastController, ModalController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 import { User } from 'src/app/models/User';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';

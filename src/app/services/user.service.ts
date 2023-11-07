@@ -28,14 +28,11 @@ export class UserService {
 
     
     login(user: User): Observable<LoginResponse> {
-      const url = this.BASE_URL + this.LOGIN_ENDPOINT;
-      return this.http.post<LoginResponse>(url, user);
+      return this.http.post<LoginResponse>(this.BASE_URL + this.LOGIN_ENDPOINT, user);
     }
 
     register(user: User) {
-      
-      const url = this.BASE_URL + this.REGISTER_ENDPOINT;
-      return this.http.post(url, user);
+      return this.http.post(this.BASE_URL + this.REGISTER_ENDPOINT, user);
     }
 
 

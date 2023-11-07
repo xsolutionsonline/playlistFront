@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Agregar Canciones</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="closeModal()">Cerrar</ion-button>
@@ -20,32 +20,35 @@
       <ion-label>Artista *</ion-label>
       <ion-input formControlName="artist"></ion-input>
       <div *ngIf="songForm.get('artist')?.errors && songForm.get('artist')?.touched">
-        <p *ngIf="songForm.get('artist')?.hasError('required')">El nombre de la playlist es obligatorio</p>
+        <p *ngIf="songForm.get('artist')?.hasError('required')">El artista de la playlist es obligatorio</p>
       </div>
     </ion-item>
     <ion-item>
       <ion-label>Álbum *</ion-label>
       <ion-input formControlName="album"></ion-input>
       <div *ngIf="songForm.get('album')?.errors && songForm.get('album')?.touched">
-        <p *ngIf="songForm.get('album')?.hasError('required')">El nombre de la playlist es obligatorio</p>
+        <p *ngIf="songForm.get('album')?.hasError('required')">El nombre del album de la playlist es obligatorio</p>
       </div>
     </ion-item>
     <ion-item>
       <ion-label>Año *</ion-label>
       <ion-input formControlName="year"></ion-input>
       <div *ngIf="songForm.get('year')?.errors && songForm.get('year')?.touched">
-        <p *ngIf="songForm.get('year')?.hasError('required')">El nombre de la playlist es obligatorio</p>
+        <p *ngIf="songForm.get('year')?.hasError('required')">El año de la playlist es obligatorio</p>
       </div>
     </ion-item>
     <ion-item>
       <ion-label>Género *</ion-label>
-      <ion-input formControlName="genre"></ion-input>
+      <ion-select formControlName="genre">
+        <ion-select-option *ngFor="let genre of spotifyGenres" [value]="genre">{{ genre }}</ion-select-option>
+      </ion-select>
       <div *ngIf="songForm.get('genre')?.errors && songForm.get('genre')?.touched">
-        <p *ngIf="songForm.get('genre')?.hasError('required')">El nombre de la playlist es obligatorio</p>
+        <p *ngIf="songForm.get('genre')?.hasError('required')">El genero de la playlist es obligatorio</p>
       </div>
     </ion-item>
+   
 
-    <ion-button type="submit" shape="round" color="secondary" (click)="addSong()">Agregar Canción</ion-button>
+    <ion-button  shape="round" color="secondary" (click)="addSong()">Agregar Canción</ion-button>
   </form>
 
 
