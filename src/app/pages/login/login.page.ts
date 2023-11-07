@@ -51,8 +51,8 @@ export class LoginPage implements OnInit {
         .login(this.user)
         .subscribe((data) => {
           if (data) {
-            console.log("entro",data)
-            this.router.navigate(['/home'], { replaceUrl: true });
+            this.userService.setToken(data.token);
+            this.router.navigate(['/user-tabs'], { replaceUrl: true });
           }
         });
     }

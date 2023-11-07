@@ -1,23 +1,11 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>list-playlists</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="list-playlists">
+      <ion-icon name="list"></ion-icon>
+    </ion-tab-button>
 
-<ion-content [fullscreen]="true">
-  <ion-tabs>
-    <ion-tab-bar slot="top">
-      <ion-tab-button tab="list-playlists">
-        <ion-label>Listar Playlists</ion-label>
-        <ion-icon name="list"></ion-icon>
-      </ion-tab-button>
-  
-      <ion-tab-button tab="create-playlist">
-        <ion-label>Crear Playlist</ion-label>
-        <ion-icon name="add"></ion-icon>
-      </ion-tab-button>
-    </ion-tab-bar>
-  
-  </ion-tabs>
-  
-</ion-content>
+    <ion-tab-button tab="create-playlist">
+      <ion-icon name="add"></ion-icon>
+    </ion-tab-button>   
+  </ion-tab-bar>
+</ion-tabs>

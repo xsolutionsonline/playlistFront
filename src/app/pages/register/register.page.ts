@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastController, ModalController } from '@ionic/angular';
-import { environment } from '../../../environments/environment';
 import { User } from 'src/app/models/User';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
@@ -52,7 +51,7 @@ export class RegisterPage implements OnInit {
           this.registerForm.value.password ===
           this.registerForm.value.passwordNew
         ) {
-          debugger;
+          
           await this.userService.register(this.usuario).subscribe((user) => {
 
               this.presentToast(

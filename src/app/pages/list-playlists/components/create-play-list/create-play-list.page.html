@@ -1,13 +1,42 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>createPlayList</ion-title>
+    <ion-title>Crear Playlist</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">createPlayList</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <form [formGroup]="songsForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label>Nombre de la Playlist</ion-label>
+      <ion-input formControlName="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Descripción</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+
+    <ion-button color="secondary" (click)="openSongModal()">Agregar Canciones</ion-button>
+
+    <ion-list *ngFor="let song of songs">
+      <ion-item>
+        <ion-label>Título</ion-label>
+        <ion-input [value]="song.title" disabled></ion-input>
+        <ion-label>Artista</ion-label>
+        <ion-input [value]="song.artist" readonly></ion-input>
+
+        <ion-label>Álbum</ion-label>
+        <ion-input [value]="song.album" readonly></ion-input>
+
+        <ion-label>Año</ion-label>
+        <ion-input [value]="song.year" readonly></ion-input>
+
+        <ion-label>Género</ion-label>
+        <ion-input [value]="song.genre" readonly></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-button type="submit" shape="round">Crear Playlist</ion-button>
+  </form>
 </ion-content>
