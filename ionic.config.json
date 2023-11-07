@@ -1,5 +1,8 @@
 {
   "name": "playlistfront",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
+

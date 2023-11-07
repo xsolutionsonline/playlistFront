@@ -1,0 +1,23 @@
+.icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 80%;
+} 
+
+.register {
+    vertical-align: middle;
+    display: flex;
+    text-align: center;
+}
+
+background-content {
+    left: 0px;
+    right: 0px;
+    top: calc(var(--offset-top) * -1);
+    bottom: calc(var(--offset-bottom) * -1);
+    position: absolute;
+    background: var(--background);
+    background: aliceblue;
+}
