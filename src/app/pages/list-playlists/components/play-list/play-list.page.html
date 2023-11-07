@@ -1,13 +1,34 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>playList</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Tus Playlists</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">playList</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-searchbar [(ngModel)]="searchText" (ionChange)="searchPlaylist()" placeholder="Buscar por título"></ion-searchbar>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button color="primary" (click)="searchPlaylist()">Buscar</ion-button>
+          <ion-button  color="medium" (click)="getAllPlaylists()">limpiar</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      
+      <ion-col size="12" size-md="6" size-lg="4" size-xl="3" *ngFor="let playlist of playlists">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>{{ playlist.description }}</ion-card-subtitle>
+            <ion-card-title>{{ playlist.name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button (click)="openSongsModal(playlist)">Ver Canciones</ion-button>
+            <ion-button color="danger" (click)="deletePlaylist(playlist.name)">Eliminar</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

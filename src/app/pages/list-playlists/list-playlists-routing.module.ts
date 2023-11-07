@@ -5,7 +5,7 @@ import { ListPlaylistsPage } from './list-playlists.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: 'user-tabs',
     component: ListPlaylistsPage,
     children: [
       {
@@ -18,16 +18,16 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/list-playlists',
-        pathMatch: 'full'
-      }
-    ]
+        redirectTo: '/user-tabs/list-playlists',
+        pathMatch: 'full',
+      },
+    ],
   },
   {
     path: '',
-    redirectTo: '/tabs/listar-playlists',
-    pathMatch: 'full'
-  }
+    redirectTo: '/user-tabs/list-playlists',
+    pathMatch: 'full',
+  },
 ];
 
 

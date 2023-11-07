@@ -22,6 +22,13 @@ const routes: Routes = [
     path: 'list-playlists',
     loadChildren: () => import('./pages/list-playlists/list-playlists.module').then( m => m.ListPlaylistsPageModule)
   },
+  {
+    path: 'user-tabs',
+    loadChildren: () =>
+      import('./pages/list-playlists/list-playlists.module').then(
+        (m) => m.ListPlaylistsPageModule
+      ),
+  },
 ];
 
 @NgModule({

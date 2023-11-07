@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Canciones</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let song of songs">
+      <ion-label>Titulo</ion-label>
+       <ion-input [value]="song.title" readonly></ion-input>
+
+      <ion-label>Artista</ion-label>
+      <ion-input [value]="song.artist" readonly></ion-input>
+
+      <ion-label>Álbum</ion-label>
+      <ion-input [value]="song.album" readonly></ion-input>
+
+      <ion-label>Año</ion-label>
+      <ion-input [value]="song.year" readonly></ion-input>
+
+      <ion-label>Género</ion-label>
+      <ion-input [value]="song.genre" readonly></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>

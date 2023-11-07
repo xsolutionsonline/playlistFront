@@ -6,3 +6,27 @@
     height: 100px;
 } 
 
+ion-card.login-card {
+    height: 80%;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.18);
+    background-color: #55CBCD;
+    color: black;
+    border-radius: 25px;
+    margin: 45px 190px;
+  
+  
+    ion-button {
+      background-color: #55CBCD;
+      color: white;
+      margin: 0 auto;
+      display: block;
+    }
+  
+    p {
+      &.ion-text-center {
+        text-align: center;
+        text-decoration: underline;
+        color: white;
+      }
+    }
+  }
